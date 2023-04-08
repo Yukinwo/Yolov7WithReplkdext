@@ -1,0 +1,68 @@
+{
+    "os": "Windows-10-10.0.22000-SP0",
+    "python": "3.9.13",
+    "heartbeatAt": "2023-03-25T13:27:02.903952",
+    "startedAt": "2023-03-25T13:27:02.689968",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--weights",
+        "yolov7.pt",
+        "--cfg",
+        "./cfg/training/yolov7.yaml",
+        "--data",
+        "./data/coco.yaml",
+        "--batch-size",
+        "16",
+        "--epochs",
+        "100",
+        "--img-size",
+        "640",
+        "640",
+        "--hyp",
+        "./data/hyp.scratch.custom.yaml",
+        "--name",
+        "run"
+    ],
+    "state": "running",
+    "program": "C:\\GitData\\yolov7\\train.py",
+    "codePath": "yolov7\\train.py",
+    "git": {
+        "remote": null,
+        "commit": "9d9347487dc0f6b9f7769de6a146772347727919"
+    },
+    "email": "2693256156@qq.com",
+    "root": "C:/GitData",
+    "host": "DESKTOP-02U14M1",
+    "username": "yukinwo",
+    "executable": "C:\\Users\\yukinwo\\anaconda3\\python.exe",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 3600.0,
+        "min": 0.0,
+        "max": 3600.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3600.0,
+            "min": 0.0,
+            "max": 3600.0
+        }
+    ],
+    "disk": {
+        "total": 931.2016334533691,
+        "used": 709.4916572570801
+    },
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 2070 SUPER",
+            "memory_total": 8589934592
+        }
+    ],
+    "memory": {
+        "total": 31.93117904663086
+    }
+}

@@ -1,0 +1,68 @@
+2023-03-25 21:27:02,698 INFO    StreamThr :1860 [internal.py:wandb_internal():87] W&B internal server running at pid: 1860, started at: 2023-03-25 21:27:02.698944
+2023-03-25 21:27:02,700 DEBUG   HandlerThread:1860 [handler.py:handle_request():144] handle_request: status
+2023-03-25 21:27:02,701 INFO    WriterThread:1860 [datastore.py:open_for_write():85] open: C:\GitData\yolov7\wandb\offline-run-20230325_212702-lxk6wpab\run-lxk6wpab.wandb
+2023-03-25 21:27:02,836 DEBUG   HandlerThread:1860 [handler.py:handle_request():144] handle_request: run_start
+2023-03-25 21:27:02,872 DEBUG   HandlerThread:1860 [system_info.py:__init__():31] System info init
+2023-03-25 21:27:02,872 DEBUG   HandlerThread:1860 [system_info.py:__init__():46] System info init done
+2023-03-25 21:27:02,872 INFO    HandlerThread:1860 [system_monitor.py:start():183] Starting system monitor
+2023-03-25 21:27:02,873 INFO    SystemMonitor:1860 [system_monitor.py:_start():147] Starting system asset monitoring threads
+2023-03-25 21:27:02,873 INFO    HandlerThread:1860 [system_monitor.py:probe():204] Collecting system info
+2023-03-25 21:27:02,877 INFO    SystemMonitor:1860 [interfaces.py:start():187] Started cpu monitoring
+2023-03-25 21:27:02,877 INFO    SystemMonitor:1860 [interfaces.py:start():187] Started disk monitoring
+2023-03-25 21:27:02,878 INFO    SystemMonitor:1860 [interfaces.py:start():187] Started gpu monitoring
+2023-03-25 21:27:02,878 INFO    SystemMonitor:1860 [interfaces.py:start():187] Started memory monitoring
+2023-03-25 21:27:02,892 INFO    SystemMonitor:1860 [interfaces.py:start():187] Started network monitoring
+2023-03-25 21:27:02,903 DEBUG   HandlerThread:1860 [system_info.py:probe():195] Probing system
+2023-03-25 21:27:02,904 DEBUG   HandlerThread:1860 [system_info.py:_probe_git():180] Probing git
+2023-03-25 21:27:03,008 DEBUG   HandlerThread:1860 [system_info.py:_probe_git():188] Probing git done
+2023-03-25 21:27:03,008 DEBUG   HandlerThread:1860 [system_info.py:probe():240] Probing system done
+2023-03-25 21:27:03,009 DEBUG   HandlerThread:1860 [system_monitor.py:probe():213] {'os': 'Windows-10-10.0.22000-SP0', 'python': '3.9.13', 'heartbeatAt': '2023-03-25T13:27:02.903952', 'startedAt': '2023-03-25T13:27:02.689968', 'docker': None, 'cuda': None, 'args': ('--weights', 'yolov7.pt', '--cfg', './cfg/training/yolov7.yaml', '--data', './data/coco.yaml', '--batch-size', '16', '--epochs', '100', '--img-size', '640', '640', '--hyp', './data/hyp.scratch.custom.yaml', '--name', 'run'), 'state': 'running', 'program': 'C:\\GitData\\yolov7\\train.py', 'codePath': 'yolov7\\train.py', 'git': {'remote': None, 'commit': '9d9347487dc0f6b9f7769de6a146772347727919'}, 'email': '2693256156@qq.com', 'root': 'C:/GitData', 'host': 'DESKTOP-02U14M1', 'username': 'yukinwo', 'executable': 'C:\\Users\\yukinwo\\anaconda3\\python.exe', 'cpu_count': 4, 'cpu_count_logical': 8, 'cpu_freq': {'current': 3600.0, 'min': 0.0, 'max': 3600.0}, 'cpu_freq_per_core': [{'current': 3600.0, 'min': 0.0, 'max': 3600.0}], 'disk': {'total': 931.2016334533691, 'used': 709.4916572570801}, 'gpu': 'NVIDIA GeForce RTX 2070 SUPER', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 2070 SUPER', 'memory_total': 8589934592}], 'memory': {'total': 31.93117904663086}}
+2023-03-25 21:27:03,009 INFO    HandlerThread:1860 [system_monitor.py:probe():214] Finished collecting system info
+2023-03-25 21:27:03,009 INFO    HandlerThread:1860 [system_monitor.py:probe():217] Publishing system info
+2023-03-25 21:27:03,009 DEBUG   HandlerThread:1860 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-03-25 21:27:03,010 DEBUG   HandlerThread:1860 [system_info.py:_save_pip():67] Saving pip packages done
+2023-03-25 21:27:03,010 DEBUG   HandlerThread:1860 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2023-03-25 21:27:16,108 DEBUG   HandlerThread:1860 [system_info.py:_save_conda():86] Saving conda packages done
+2023-03-25 21:27:16,110 INFO    HandlerThread:1860 [system_monitor.py:probe():219] Finished publishing system info
+2023-03-25 21:27:16,118 DEBUG   HandlerThread:1860 [handler.py:handle_request():144] handle_request: status_report
+2023-03-25 21:27:16,118 DEBUG   HandlerThread:1860 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-25 21:27:16,119 DEBUG   HandlerThread:1860 [handler.py:handle_request():144] handle_request: status_report
+2023-03-25 21:27:16,119 DEBUG   SenderThread:1860 [sender.py:send_request():363] send_request: status_report
+2023-03-25 21:27:16,119 DEBUG   HandlerThread:1860 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-25 21:27:16,119 DEBUG   SenderThread:1860 [sender.py:send_request():363] send_request: status_report
+2023-03-25 21:27:18,129 DEBUG   HandlerThread:1860 [handler.py:handle_request():144] handle_request: status_report
+2023-03-25 21:27:18,129 DEBUG   SenderThread:1860 [sender.py:send_request():363] send_request: status_report
+2023-03-25 21:27:23,174 DEBUG   HandlerThread:1860 [handler.py:handle_request():144] handle_request: status_report
+2023-03-25 21:27:23,174 DEBUG   SenderThread:1860 [sender.py:send_request():363] send_request: status_report
+2023-03-25 21:27:28,219 DEBUG   HandlerThread:1860 [handler.py:handle_request():144] handle_request: status_report
+2023-03-25 21:27:28,219 DEBUG   SenderThread:1860 [sender.py:send_request():363] send_request: status_report
+2023-03-25 21:27:33,271 DEBUG   HandlerThread:1860 [handler.py:handle_request():144] handle_request: status_report
+2023-03-25 21:27:33,272 DEBUG   SenderThread:1860 [sender.py:send_request():363] send_request: status_report
+2023-03-25 21:27:38,316 DEBUG   HandlerThread:1860 [handler.py:handle_request():144] handle_request: status_report
+2023-03-25 21:27:38,316 DEBUG   SenderThread:1860 [sender.py:send_request():363] send_request: status_report
+2023-03-25 21:27:43,372 DEBUG   HandlerThread:1860 [handler.py:handle_request():144] handle_request: status_report
+2023-03-25 21:27:43,373 DEBUG   SenderThread:1860 [sender.py:send_request():363] send_request: status_report
+2023-03-25 21:27:48,426 DEBUG   HandlerThread:1860 [handler.py:handle_request():144] handle_request: status_report
+2023-03-25 21:27:48,426 DEBUG   SenderThread:1860 [sender.py:send_request():363] send_request: status_report
+2023-03-25 21:27:53,493 DEBUG   HandlerThread:1860 [handler.py:handle_request():144] handle_request: status_report
+2023-03-25 21:27:53,494 DEBUG   SenderThread:1860 [sender.py:send_request():363] send_request: status_report
+2023-03-25 21:27:58,557 DEBUG   HandlerThread:1860 [handler.py:handle_request():144] handle_request: status_report
+2023-03-25 21:27:58,557 DEBUG   SenderThread:1860 [sender.py:send_request():363] send_request: status_report
+2023-03-25 21:28:02,898 DEBUG   SystemMonitor:1860 [system_monitor.py:_start():161] Starting system metrics aggregation loop
+2023-03-25 21:28:03,595 DEBUG   HandlerThread:1860 [handler.py:handle_request():144] handle_request: status_report
+2023-03-25 21:28:03,595 DEBUG   SenderThread:1860 [sender.py:send_request():363] send_request: status_report
+2023-03-25 21:28:08,654 DEBUG   HandlerThread:1860 [handler.py:handle_request():144] handle_request: status_report
+2023-03-25 21:28:08,654 DEBUG   SenderThread:1860 [sender.py:send_request():363] send_request: status_report
+2023-03-25 21:28:13,697 DEBUG   HandlerThread:1860 [handler.py:handle_request():144] handle_request: status_report
+2023-03-25 21:28:13,697 DEBUG   SenderThread:1860 [sender.py:send_request():363] send_request: status_report
+2023-03-25 21:28:18,746 DEBUG   HandlerThread:1860 [handler.py:handle_request():144] handle_request: status_report
+2023-03-25 21:28:18,746 DEBUG   SenderThread:1860 [sender.py:send_request():363] send_request: status_report
+2023-03-25 21:28:23,777 DEBUG   HandlerThread:1860 [handler.py:handle_request():144] handle_request: status_report
+2023-03-25 21:28:23,777 DEBUG   SenderThread:1860 [sender.py:send_request():363] send_request: status_report
+2023-03-25 21:28:28,389 ERROR   cpu       :1860 [interfaces.py:monitor():141] Failed to sample metric: process no longer exists (pid=16752)
+2023-03-25 21:28:28,393 ERROR   cpu       :1860 [interfaces.py:monitor():141] Failed to sample metric: process no longer exists (pid=16752)
+2023-03-25 21:28:28,621 ERROR   memory    :1860 [interfaces.py:monitor():141] Failed to sample metric: process no longer exists (pid=16752)
+2023-03-25 21:28:28,632 ERROR   memory    :1860 [interfaces.py:monitor():141] Failed to sample metric: process no longer exists (pid=16752)
+2023-03-25 21:28:29,634 DEBUG   HandlerThread:1860 [handler.py:handle_request():144] handle_request: status_report
+2023-03-25 21:28:29,634 DEBUG   SenderThread:1860 [sender.py:send_request():363] send_request: status_report
+2023-03-25 21:28:29,635 INFO    MainThread:1860 [internal.py:handle_exit():77] Internal process exited

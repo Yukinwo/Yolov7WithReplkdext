@@ -1,0 +1,10 @@
+#text = """
+train: C:\GitData\yolov7\dataset\train
+val: C:\GitData\yolov7\dataset\test
+
+
+# number of classes
+nc: 2
+
+# class names
+names: ['negative','positive']
