@@ -1,1 +1,0 @@
-python ./yolov7/train.py --weights ./yolov7/yolov7.pt --cfg ./yolov7/cfg/training/yolov7_Replkdext.yaml --data ./yolov7/data/coco.yaml --batch-size 8 --epochs 100 --img-size 640 640 --hyp ./yolov7/data/hyp.scratch.custom.yaml --name run
