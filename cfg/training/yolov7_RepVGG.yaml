@@ -1,5 +1,4 @@
-代码
-# YOLOv7 🚀, GPL-3.0 license
+
 # parameters
 nc: 2  # number of classes
 depth_multiple: 0.33  # model depth multiple
@@ -81,7 +80,7 @@ head:
    [[-1, -3, 39], 1, Concat, [1]],
    [-1, 3, C3C2, [512]],
 
-# 检测头 -----------------------------
+# JianCeTou -----------------------------
    [49, 1, RepConv, [256, 3, 1]],
    [55, 1, RepConv, [512, 3, 1]],
    [61, 1, RepConv, [1024, 3, 1]],

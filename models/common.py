@@ -17,7 +17,14 @@ from utils.datasets import letterbox
 from utils.general import non_max_suppression, make_divisible, scale_coords, increment_path, xyxy2xywh
 from utils.plots import color_list, plot_one_box
 from utils.torch_utils import time_synchronized
-
+#引入conv_bn相关
+from models.Litemodel import conv_bn
+from models.Litemodel import CBH, ES_Bottleneck, DWConvblock, ADD, RepVGGBlock, LC_Block, \
+    Dense, conv_bn_relu_maxpool, Shuffle_Block, stem, MBConvBlock, mobilev3_bneck
+from models.muitlbackbone import conv_bn_hswish, DropPath, MobileNetV3_InvertedResidual, DepthSepConv, \
+    ShuffleNetV2_Model, Conv_maxpool, ConvNeXt, RepLKNet_Stem, RepLKNet_stage1, RepLKNet_stage2, \
+        RepLKNet_stage3, RepLKNet_stage4, CoT3, RegNet1, RegNet2, RegNet3, Efficient1, Efficient2, Efficient3, \
+            MobileNet1,MobileNet2,MobileNet3, C3STR, ConvNextBlock
 
 
 ##### basic ####
@@ -2125,7 +2132,7 @@ class RepVGGBlock(nn.Module):
             self.rbr_1x1 = conv_bn(in_channels=in_channels, out_channels=out_channels, kernel_size=1, stride=stride,
                                    padding=padding_11, groups=groups)
             # print('RepVGG Block, identity = ', self.rbr_identity)
-def switch_to_deploy(self):
+    def switch_to_deploy(self):
         if hasattr(self, 'rbr_1x1'):
             kernel, bias = self.get_equivalent_kernel_bias()
             self.rbr_reparam = nn.Conv2d(in_channels=self.rbr_dense.conv.in_channels, out_channels=self.rbr_dense.conv.out_channels,
@@ -2196,3 +2203,33 @@ def switch_to_deploy(self):
             id_out = self.rbr_identity(inputs)
 
         return self.nonlinearity(self.se(self.rbr_dense(inputs) + self.rbr_1x1(inputs) + id_out))
+
+
+#解决C3C2模块缺失
+class C3C2(nn.Module):
+    # CSP Bottleneck with 3 convolutions
+    def __init__(self, c1, c2, n=1, shortcut=True, g=1, e=0.5):  # ch_in, ch_out, number, shortcut, groups, expansion
+        super().__init__()
+        c_ = int(c2 * e)  # hidden channels
+        self.conv = nn.Conv2d(c1, c_, 1, 1, autopad(1, None), groups=g, bias=False)
+        self.bn = nn.BatchNorm2d(c_)
+        self.act = nn.SiLU()
+        self.cv1 = Conv(2 * c_, c2, 1, act=nn.Mish())
+        self.m = nn.Sequential(*(Bottleneck(c_, c_, shortcut, g, e=1.0) for _ in range(n)))
+
+    def forward(self, x):
+        y = self.conv(x)
+        return self.cv1(torch.cat((self.m(self.act(self.bn(y))), y), dim=1))
+
+class C3(nn.Module):
+    # CSP Bottleneck with 3 convolutions
+    def __init__(self, c1, c2, n=1, shortcut=True, g=1, e=0.5):  # ch_in, ch_out, number, shortcut, groups, expansion
+        super().__init__()
+        c_ = int(c2 * e)  # hidden channels
+        self.cv1 = Conv(c1, c_, 1, 1)
+        self.cv2 = Conv(c1, c_, 1, 1)
+        self.cv3 = Conv(2 * c_, c2, 1)  # act=FReLU(c2)
+        self.m = nn.Sequential(*(Bottleneck(c_, c_, shortcut, g, e=1.0) for _ in range(n)))
+
+    def forward(self, x):
+        return self.cv3(torch.cat((self.m(self.cv1(x)), self.cv2(x)), dim=1))
